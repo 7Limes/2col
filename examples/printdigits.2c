@@ -1,0 +1,14 @@
+~ Print digits of entered number in reverse
+# i
+
+@ 1
+# c
+# 10
+%
+! p
+! .10
+# 10
+/
+
+? 0
+^ 1
