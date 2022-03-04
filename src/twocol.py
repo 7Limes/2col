@@ -15,6 +15,9 @@ COMMANDS = {
   '^': 'jump',
 }
 
+class twocolError(Exception):
+  pass
+
 class TwocolInterpreter:
   def __init__(self, debug=True):
     self.debug = debug
@@ -38,7 +41,10 @@ class TwocolInterpreter:
       cmd = line[0]
       value = line[1:]
       if line[0] != '~' and cmd in COMMANDS:
-        getattr(self, f'_cmd_{COMMANDS[cmd]}', None)(value)
+        try:
+          getattr(self, f'_cmd_{COMMANDS[cmd]}', None)(value)
+        except IndexError:
+          self._error('tried to reference nonexistent stack value')
       self.lineNum += 1
 
     if self.debug:
@@ -101,6 +107,9 @@ class TwocolInterpreter:
   def _add_label(self, value, ln):
     if '.' not in value:
       self.labels[self._format_value(value)] = ln
+
+  def _error(self, message):
+    raise twocolError(f'line {self.lineNum}: {message}')
 
 
 # Main method (run from command line)
