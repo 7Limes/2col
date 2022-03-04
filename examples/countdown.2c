@@ -1,0 +1,11 @@
+~ Counts down to 0 from the number entered
+# i
+
+@ 1
+# 1
+-
+! c
+!.10
+
+? 0
+^ 1
