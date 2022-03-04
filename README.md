@@ -45,5 +45,5 @@ Labels are initialized before execution, so jumping downward to labels also work
 
 ```
 
-### Running From Cmd / Command Line
+### Run Script from Command Line
 `python twocol.py [script] (-d)`
