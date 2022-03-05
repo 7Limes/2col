@@ -13,6 +13,7 @@ COMMANDS = {
   '%': 'mod',
   '?': 'if',
   '^': 'jump',
+  '$': 'swap'
 }
 
 class twocolError(Exception):
@@ -46,6 +47,8 @@ class TwocolInterpreter:
         except IndexError:
           self._error('tried to reference nonexistent stack value')
       self.lineNum += 1
+      #print(self.lineNum, self.stack)
+      #input()
 
     if self.debug:
       self._print_debug_info(startTime)
@@ -103,6 +106,9 @@ class TwocolInterpreter:
   def _cmd_jump(self, value):
     if '.' not in value and self._format_value(value) in self.labels:
       self.lineNum = self.labels[self._format_value(value)]
+
+  def _cmd_swap(self, value):
+    self.stack[0], self.stack[1] = self.stack[1], self.stack[0]
     
   def _add_label(self, value, ln):
     if '.' not in value:
