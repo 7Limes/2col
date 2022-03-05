@@ -20,6 +20,7 @@ s[0] refers to the first value of the stack (the one on top), and s[1] refers to
 - `? [value]` -- skip the next line if s[0] == value
 - `^ [value]` -- jump to label that is named value
 - `@ [value]` -- label a line
+- `$` -- swap the first 2 values of the stack
 - `~` -- comment (must be first character)
 
 ## Value Commands
@@ -44,6 +45,3 @@ Labels are initialized before execution, so jumping downward to labels also work
 ! .101
 
 ```
-
-### Run Script from Command Line
-`python twocol.py [script] (-d)`
