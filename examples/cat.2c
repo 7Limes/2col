@@ -1,3 +1,3 @@
-~ Outputs whatever number is inputted
+~ Outputs whatever number is inputted with a newline
 ! i
 ! .10
