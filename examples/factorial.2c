@@ -1,0 +1,17 @@
+~ get factorial of number inputted
+# 1
+# i
+
+@ 10
+# c
+$ 2
+*
+$
+
+# 1
+-
+
+? 0
+  ^ 10
+$
+! c
