@@ -2,6 +2,19 @@
 
 A minimal stack oriented language where each line contains only 2 columns.
 
+## Running
+Run from command line:
+```
+python twocol.py [filename] (-d)
+```
+
+Run from python script:
+```py
+from twocol import TwocolInterpreter
+tc = TwocolInterpreter()
+tc.run('script.2c', debug=False)
+```
+
 ## Commands:
 Each command is formatted as `[command] [value]`
 
@@ -31,7 +44,7 @@ Value commands are special characters that are used in [value] that will insert 
 - `c` -- copy the top value from the stack without popping
 - `i` -- get integer input from user
 
-### Command Notes
+### Extra Notes
 Labels are initialized before execution, so jumping downward to labels also works. For example:
 
 ```
