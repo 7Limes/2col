@@ -12,7 +12,7 @@ Run from python script:
 ```py
 from twocol import TwocolInterpreter
 tc = TwocolInterpreter()
-tc.run('script.2c', debug=False)
+tc.run('script.2c')
 ```
 
 ## Commands:
